@@ -50,11 +50,15 @@ export default function Home() {
       JSON.stringify({
         bio: 'India',
         fieldsToReveal: ['revealAgeAbove18', 'revealPinCode'],
-        returnUrl: 'http://localhost:3001',
+        returnUrl: 'https://consumer-app.vercel.app',
       }),
     )
 
-    window.location.href = `http://localhost:3000/requests/${encodedUri}`
+    const baseURL = process.env.NODE_ENV === 'production'
+  ? 'https://afk-app.vercel.app'
+  : 'http://localhost:3000';
+
+  window.location.href = `${baseURL}/requests/${encodedUri}`;
   }
 
   useEffect(() => {
