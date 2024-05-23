@@ -50,12 +50,12 @@ export default function Home() {
       JSON.stringify({
         bio: 'India',
         fieldsToReveal: ['revealAgeAbove18', 'revealPinCode'],
-        returnUrl: 'https://consumer-app.vercel.app',
+        returnUrl: 'https://anon-aadhaar-lite-consumer-app.vercel.app/',
       }),
     )
 
     const baseURL = process.env.NODE_ENV === 'production'
-  ? 'https://afk-app.vercel.app'
+  ? 'https://anon-aadhaar-lite-afk-app.vercel.app/'
   : 'http://localhost:3000';
 
   window.location.href = `${baseURL}/requests/${encodedUri}`;
