@@ -3,7 +3,7 @@
   "version": "2.0.3",
   "description": "Frontend component kit for Anon Aadhaar protocol",
   "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "types": "./src/index.ts",
   "scripts": {
     "build": "tsup src/index.ts --dts",
     "dev": "tsup src/index.ts --dts --watch",
