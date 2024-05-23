@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@anon-aadhaar/react": "*",
+    "@anon-aadhaar/core": "*",
     "@semaphore-protocol/identity": "^4.0.0-beta.9",
     "ethers": "^6.12.1",
     "localforage": "^1.10.0",
