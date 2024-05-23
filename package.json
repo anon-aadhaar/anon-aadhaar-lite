@@ -31,7 +31,8 @@
       "packages/*"
     ],
     "nohoist": [
-      "**/circomlib"
+      "**/circomlib",
+      "**/@anon-aadhaar/**"
     ]
   },
   "bugs": {
