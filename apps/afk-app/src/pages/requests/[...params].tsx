@@ -23,13 +23,13 @@ const ParamsPage = () => {
   const eyeBlob = new Blob([icons.eye], { type: 'image/svg+xml' })
   const revealillustration = useMemo(
     () => URL.createObjectURL(eyeBlob),
-    [icons.eye],
+    [icons.eye]
   )
 
   const eyeOffBlob = new Blob([icons.eyeOff], { type: 'image/svg+xml' })
   const noRevealillustration = useMemo(
     () => URL.createObjectURL(eyeOffBlob),
-    [icons.eyeOff],
+    [icons.eyeOff]
   )
 
   useEffect(() => {
@@ -47,7 +47,7 @@ const ParamsPage = () => {
 
   const generateNewQR = async () => {
     const privateKeyResponse = await fetch(
-      'https://nodejs-serverless-function-express-eight-iota.vercel.app/api/get-fresh-qr',
+      'https://nodejs-serverless-function-express-eight-iota.vercel.app/api/get-fresh-qr'
     )
 
     if (!privateKeyResponse.ok) {
@@ -101,7 +101,7 @@ const ParamsPage = () => {
     try {
       const proof = await generateAFKProofs(
         _identity.privateKey,
-        fieldsToReveal,
+        fieldsToReveal
       )
 
       console.log(proof)
@@ -109,7 +109,7 @@ const ParamsPage = () => {
       const payload = encodeURIComponent(
         JSON.stringify({
           proof: proof,
-        }),
+        })
       )
 
       // Redirect back to port 3000 with the payload
@@ -175,7 +175,7 @@ const ParamsPage = () => {
                                     {label}
                                   </div>
                                 </div>
-                              ),
+                              )
                             )
                           : fieldsLabel.map(({ key, label }) => (
                               <div className="flex items-center" key={key}>
@@ -252,8 +252,13 @@ const ParamsPage = () => {
               )}
             </div>
 
-            <p className="mt-10 text-center text-sm text-gray-500">
-              Learn more about AFK
+            <p className="mt-10 text-center text-sm text-gray-500 hover:underline">
+              <a
+                href="https://github.com/anon-aadhaar/anon-aadhaar-lite"
+                target="_blank"
+              >
+                Learn more about AFK
+              </a>
             </p>
           </div>
           <div
